@@ -1,0 +1,86 @@
+From 70ed9b43b2b05ff8072c537d5c8b4ac9da47ff51 Mon Sep 17 00:00:00 2001
+From: eternalwrt-bot <zj18139624826@gmail.com>
+Date: Sat, 27 Jun 2026 18:32:36 +0800
+Subject: [PATCH] luci-mod-status: add help & feedback links with styled button
+ group
+
+Add a help & feedback section in status overview page, including:
+- Project link
+- Issue feedback link
+- Blog link
+
+Also introduce custom CSS styles for button layout:
+- Flexible button wrap layout
+- Hover effects and improved spacing
+- Unified button appearance
+
+Signed-off-by: MomoFlora <2519840456@qq.com>
+---
+ .../view/status/include/10_system.js          | 45 ++++++++++++++++++-
+ 1 file changed, 44 insertions(+), 1 deletion(-)
+
+diff --git a/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js b/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
+index a68e64b61e..76d5a18217 100644
+--- a/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
++++ b/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
+@@ -93,7 +93,25 @@ return baseclass.extend({
+ 				systeminfo.load[1] / 65535.0,
+ 				systeminfo.load[2] / 65535.0
+ 			) : null,
+-			_('CPU usage (%)'),    cpuusage.cpuusage
++			_('CPU usage (%)'),    cpuusage.cpuusage,
++			_('帮助与反馈'),
++			E('div', { class: 'help-btn-wrap' }, [
++				E('a', {
++					class: 'btn cbi-button help-btn',
++					href: 'https://github.com/MomoFlora/immortalwrt-mt798x-actions',
++					target: '_blank'
++				}, [ _('项目地址') ]),
++				E('a', {
++					class: 'btn cbi-button help-btn',
++					href: 'https://github.com/MomoFlora/immortalwrt-mt798x-actions/issues',
++					target: '_blank'
++				}, [ _('功能反馈') ]),
++				E('a', {
++					class: 'btn cbi-button help-btn',
++					href: 'https://www.kejizero.xyz',
++					target: '_blank'
++				}, [ _('博客地址') ])
++			])
+ 		];
+ 
+ 		if (tempinfo.tempinfo) {
+@@ -103,6 +121,31 @@ return baseclass.extend({
+ 
+ 		var table = E('table', { 'class': 'table' });
+ 
++		if (!document.getElementById('help-btn-style')) {
++			var style = E('style', { id: 'help-btn-style' }, `
++				.help-btn-wrap {
++					display: flex;
++					flex-wrap: wrap;
++					gap: 10px;
++					align-items: center;
++				}
++				.help-btn {
++					padding: 0 12px;
++					border-radius: 6px;
++					transition: all 0.2s ease;
++					white-space: nowrap;
++				}
++				.help-btn:hover {
++					background: #1775ff !important;
++					color: #fff !important;
++					border-color: #1775ff !important;
++					transform: translateY(-1px);
++					box-shadow: 0 2px 6px rgba(0,0,0,0.15);
++				}
++			`);
++			document.head.appendChild(style);
++		}
++
+ 		for (var i = 0; i < fields.length; i += 2) {
+ 			table.appendChild(E('tr', { 'class': 'tr' }, [
+ 				E('td', { 'class': 'td left', 'width': '33%' }, [ fields[i] ]),
+-- 
+2.43.0
