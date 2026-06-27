@@ -33,7 +33,7 @@ on:
       wifi_ssid:
         description: '📶 设置默认无线网络（WiFi）名称（SSID）'
         required: true
-        default: 'EternalWrt'
+        default: 'ZeroWrt'
         type: string
       wifi_password:
         description: '🔐 设置默认无线网络（WiFi）密码（可选，留空则为开放网络）'
@@ -47,8 +47,8 @@ on:
         type: string
       root_password:
         description: '🛡️ 设置后台（root）默认密码（可选，留空则无密码）'
-        required: false
-        default: ''
+        required: true
+        default: 'password'
         type: string
 
 env:
