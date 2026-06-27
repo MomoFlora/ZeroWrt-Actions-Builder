@@ -17,8 +17,8 @@ index 92e1dd4..c106f78 100644
  			'class': 'cbi-button cbi-button-action important',
 -			'click': ui.createHandlerFn(this, 'handleReboot')
 +			'click': function () {
-+				ui.showModal(_('Confirm Reboot'), [
-+					E('p', {}, _('Are you sure you want to reboot the system?')),
++				ui.showModal(_('确认重启'), [
++					E('p', {}, _('你确认要重启系统？')),
 +					E('button', {
 +						'class': 'cbi-button cbi-button-action important',
 +						'style': 'margin-left: 0px; background: red!important; border-color: red!important',
@@ -26,7 +26,7 @@ index 92e1dd4..c106f78 100644
 +							ui.hideModal();
 +							this.handleReboot();
 +						}.bind(this)
-+					}, _('Confirm')),
++					}, _('确认')),
 +					E('button', {
 +						'class': 'btn cbi-button cbi-button-apply',
 +						'style': 'margin-left: 20px',
