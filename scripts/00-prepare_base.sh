@@ -48,8 +48,8 @@ sed -i 's/pool.ntp.org/time2.cloud.tencent.com/g' package/base-files/files/bin/c
 
 # 根文件系统文件
 mkdir -p files/etc files/root
-curl -so files/etc/banner https://raw.githubusercontent.com/MomoFlora/immortalwrt-mt798x-actions/refs/heads/master/eternalwrt/files/etc/banner
-curl -so files/root/.zshrc https://raw.githubusercontent.com/MomoFlora/immortalwrt-mt798x-actions/refs/heads/master/eternalwrt/files/root/.zshrc
+curl -so files/etc/banner https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/files/etc/banner
+curl -so files/root/.zshrc https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/files/root/.zshrc
 pushd files/root
 git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh ./.oh-my-zsh
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ./.oh-my-zsh/custom/plugins/zsh-autosuggestions
@@ -59,8 +59,8 @@ popd
 
 # 应用补丁文件
 pushd feeds/luci
-    curl -s https://raw.githubusercontent.com/MomoFlora/immortalwrt-mt798x-actions/refs/heads/master/eternalwrt/patch/firewall/0001-luci-mod-status-firewall-disable-legacy-firewall-rule.patch | patch -p1
-    curl -s https://raw.githubusercontent.com/MomoFlora/immortalwrt-mt798x-actions/refs/heads/master/eternalwrt/patch/firewall/0002-luci-app-firewall-remove-flow-offloading-UI-section.patch | patch -p1
-    curl -s https://raw.githubusercontent.com/MomoFlora/immortalwrt-mt798x-actions/refs/heads/master/eternalwrt/patch/reboot/0001-luci-mod-system-add-modal-overlay-dialog-to-reboot.patch | patch -p1
-    curl -s https://raw.githubusercontent.com/MomoFlora/immortalwrt-mt798x-actions/refs/heads/master/eternalwrt/patch/overview/0001-luci-mod-status-add-help-feedback-links-with-styled-button.patch | patch -p1
+    curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/firewall/0001-luci-mod-status-firewall-disable-legacy-firewall-rule.patch | patch -p1
+    curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/firewall/0002-luci-app-firewall-remove-flow-offloading-UI-section.patch | patch -p1
+    curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/reboot/0001-luci-mod-system-add-modal-overlay-dialog-to-reboot.patch | patch -p1
+    curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/overview/0001-luci-mod-status-add-help-feedback-links-with-styled-button.patch | patch -p1
 popd
