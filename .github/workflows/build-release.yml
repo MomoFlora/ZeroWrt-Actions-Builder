@@ -6,7 +6,7 @@ on:
       device:
         description: '⚙️ 请选择要编译的目标设备型号'
         required: true
-        default: 'ruijie_rg-x60'
+        default: 'ruijie_rg-x60-new'
         type: choice
         options:
           - 'abt_asr3000'
