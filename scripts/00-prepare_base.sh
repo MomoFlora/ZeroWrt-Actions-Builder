@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 # 修改默认IP
-sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.110.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/$LAN/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.110.1/$LAN/g' package/base-files/files/bin/config_generate
 
 # 修改默认主机名
 sed -i 's/ImmortalWrt/ZeroWrt/g' package/base-files/files/bin/config_generate
@@ -13,18 +13,21 @@ sed -i 's/+luci-theme-bootstrap/+luci-theme-design/' feeds/luci/collections/luci
 
 # MTK 无线 WIFI 设置
 sed -i \
-  -e 's/ImmortalWrt-2\.4G/ZeroWrt-2.4G/g' \
-  -e 's/ImmortalWrt-5G/ZeroWrt-5G/g' \
-  -e 's/encryption=none/encryption=psk2/g' \
-  -e '/set wireless.default_\${dev}\.encryption=psk2/a\					set wireless.default_${dev}.key=1234567890' \
+  -e "s/ImmortalWrt-2\.4G/${WIFI_SSID:-ZeroWrt}-2.4G/g" \
+  -e "s/ImmortalWrt-5G/${WIFI_SSID:-ZeroWrt}-5G/g" \
+  -e "s/encryption=none/encryption=psk2/g" \
+  -e "/set wireless.default_\${dev}\.encryption=psk2/a\\
+\t\t\t\tset wireless.default_\${dev}.key=${WIFI_PASSWORD:-1234567890}" \
   package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
 
 # 更改默认 Shell 为 zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 # 修改默认密码
-default_password=$(openssl passwd -5 password)
-sed -i "s|^root:[^:]*:|root:${default_password}:|" package/base-files/files/etc/shadow
+if [ -n "$ROOT_PASSWORD" ]; then
+    default_password=$(openssl passwd -5 $ROOT_PASSWORD)
+    sed -i "s|^root:[^:]*:|root:${default_password}:|" package/base-files/files/etc/shadow
+fi
 
 # TTYD 设置
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
