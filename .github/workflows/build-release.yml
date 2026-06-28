@@ -227,7 +227,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: ${{ github.event.inputs.device }}
-          path: output
+          path: openwrt/output
 
   build_uboot:
     runs-on: ubuntu-22.04
@@ -265,7 +265,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: ${{ github.event.inputs.device }}
-          path: output
+          path: uboot/output
           
   release:
     name: Create Release
