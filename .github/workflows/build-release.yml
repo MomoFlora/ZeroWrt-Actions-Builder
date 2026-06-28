@@ -259,7 +259,7 @@ jobs:
         id: compile
         run: |
           cd uboot
-          make BOARD=ruijie_rg-x60-new VERSION=SP1 SIMG=1
+          make BOARD=${{ github.event.inputs.device }} VERSION=SP1 SIMG=1
 
       - name: Upload artifacts
         uses: actions/upload-artifact@main
