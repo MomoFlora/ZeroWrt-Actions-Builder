@@ -231,9 +231,41 @@ jobs:
           name: ${{ github.event.inputs.device }}
           path: output
 
+  build_uboot:
+    runs-on: ubuntu-22.04
+    if: ${{ github.event.repository.owner.id == github.event.sender.id && github.event.inputs.build_uboot == 'true' }}
+    permissions:
+      contents: write
+
+    env:
+      BL_URL: https://github.com/Yuzhii0718/bl-mt798x-dhcpd
+      BL_BRANCH: master
+      TZ: Etc/UTC
+
+    steps:
+      - name: Initialize the build environment
+        id: init
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo -E apt-get -qq update
+          sudo -E apt-get -qq install gcc-aarch64-linux-gnu build-essential flex bison libssl-dev device-tree-compiler qemu-user-static python2.7 gcc-arm-linux-gnueabi nodejs npm
+          sudo -E apt-get -qq install rename tar
+          sudo timedatectl set-timezone "$TZ"
+
+      - name: Clone source code          
+        run: |
+          git clone -q --single-branch --depth=1 --branch=${REPO_BRANCH} ${REPO_URL} uboot
+
+      - name: Compile the Uboot
+        id: compile
+        run: |
+          cd uboot
+          make BOARD=ruijie_rg-x60-new VERSION=SP1 SIMG=1
+        
   release:
     name: Create Release
-    needs: [build_firmware]
+    needs: [build_firmware,build_uboot]
     runs-on: ubuntu-latest
 
     steps:
