@@ -37,8 +37,8 @@ on:
         type: string
       wifi_password:
         description: '🔐 设置默认无线网络（WiFi）密码（可选，留空则为开放网络）'
-        required: true
-        default: '1234567890'
+        required: false
+        default: ''
         type: string
       lan_addr:
         description: '📍 设置固件默认局域网（LAN）IP 地址'
@@ -47,14 +47,13 @@ on:
         type: string
       root_password:
         description: '🛡️ 设置后台（root）默认密码（可选，留空则无密码）'
-        required: true
-        default: 'password'
+        required: false
+        default: ''
         type: string
       build_uboot:
-        description: '🧩 是否同时编译 U-Boot（Bootloader 启动引导程序。开启后将额外编译 U-Boot，用于刷写或更新设备启动固件，编译时间会增加）'
-        required: true
-        default: false
+        description: '🧩 是否同时编译 U-Boot（可选）'
         type: boolean
+        default: false
 
 env:
   TZ: Etc/UTC
