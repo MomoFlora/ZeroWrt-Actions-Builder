@@ -51,10 +51,10 @@
 | **磊科 (Netcore)** | N60 Pro | `netcore_n60-pro` |
 | **诺基亚 (Nokia)** | EA0326GMP | `nokia_ea0326gmp` |
 | **飞利浦 (Philips)** | HY3000 | `philips_hy3000` |
-| **其他适配** | 🚀 亚洲商旅 ASR3000 | `abt_asr3000` |
-| | 🚀 Cetron CT3003 | `cetron_ct3003` |
-| | 🚀 SL 3000 (eMMC) | `sl_3000-emmc` |
-| | 🚀 SN R1 | `sn_r1` |
+| **其他适配** | 亚洲商旅 ASR3000 | `abt_asr3000` |
+| | Cetron CT3003 | `cetron_ct3003` |
+| | SL 3000 (eMMC) | `sl_3000-emmc` |
+| | SN R1 | `sn_r1` |
 
 ---
 
