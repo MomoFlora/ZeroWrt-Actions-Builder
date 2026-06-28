@@ -30,6 +30,11 @@ on:
           - 'supergateway_s20l'
           - 'supergateway_s20m'
           - 'supergateway_s20p'   
+      build_uboot:
+        description: '🧩 是否同时编译 U-Boot'
+        required: true
+        default: false
+        type: boolean
       wifi_ssid:
         description: '📶 设置默认无线网络（WiFi）名称（SSID）'
         required: true
