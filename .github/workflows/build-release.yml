@@ -64,9 +64,7 @@ jobs:
 
     env:
       REPO_URL: https://github.com/Yuzhii0718/immortalwrt-mt798x-6.6-padavanonly
-      BL_URL: https://github.com/Yuzhii0718/bl-mt798x-dhcpd
       REPO_BRANCH: openwrt-24.10-6.6
-      BL_BRANCH: master
       CONFIG_FILE: configs/${{ github.event.inputs.device }}.config
       PREPARE_BASE_SH: scripts/00-prepare_base.sh
       PREPARE_PACKAGE_SH: scripts/01-prepare_package.sh
@@ -262,7 +260,13 @@ jobs:
         run: |
           cd uboot
           make BOARD=ruijie_rg-x60-new VERSION=SP1 SIMG=1
-        
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@main
+        with:
+          name: ${{ github.event.inputs.device }}
+          path: output
+          
   release:
     name: Create Release
     needs: [build_firmware,build_uboot]
