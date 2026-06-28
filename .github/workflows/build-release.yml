@@ -143,6 +143,7 @@ jobs:
       - name: Clone source code
         id: codes
         working-directory: /builder
+        run: |
           git clone -q --single-branch --depth=1 --branch=${REPO_BRANCH} ${REPO_URL} openwrt
           ln -sf /builder/openwrt ${{ github.workspace }}/openwrt
 
