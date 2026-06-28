@@ -23,7 +23,7 @@ on:
           - 'philips_hy3000'
           - 'qihoo_360t7'
           - 'ruijie_ew-6000gx-pro'          
-          - 'ruijie_rg-x60'
+          - 'ruijie_rg-x60-new'
           - 'ruijie_rg-x60-pro'
           - 'sl_3000-emmc'
           - 'sn_r1'
