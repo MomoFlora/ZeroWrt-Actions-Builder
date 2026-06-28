@@ -29,12 +29,7 @@ on:
           - 'sn_r1'
           - 'supergateway_s20l'
           - 'supergateway_s20m'
-          - 'supergateway_s20p'   
-      build_uboot:
-        description: '🧩 是否同时编译 U-Boot'
-        required: true
-        default: false
-        type: boolean
+          - 'supergateway_s20p'
       wifi_ssid:
         description: '📶 设置默认无线网络（WiFi）名称（SSID）'
         required: true
@@ -55,7 +50,12 @@ on:
         required: true
         default: 'password'
         type: string
-      
+      build_uboot:
+        description: '🧩 是否同时编译 U-Boot（Bootloader 启动引导程序。开启后将额外编译 U-Boot，用于刷写或更新设备启动固件，编译时间会增加）'
+        required: true
+        default: false
+        type: boolean
+
 env:
   TZ: Etc/UTC
   CCACHE_DIR: /builder/openwrt/.ccache
