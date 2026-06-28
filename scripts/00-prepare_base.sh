@@ -59,8 +59,7 @@ popd
 
 # 应用补丁文件
 pushd feeds/luci
-    curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/firewall/0001-luci-mod-status-firewall-disable-legacy-firewall-rule.patch | patch -p1
-    curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/firewall/0002-luci-app-firewall-remove-flow-offloading-UI-section.patch | patch -p1
+    curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/firewall/0001-luci-app-firewall-remove-flow-offloading-UI-section.patch | patch -p1
     curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/reboot/0001-luci-mod-system-add-modal-overlay-dialog-to-reboot.patch | patch -p1
     curl -s https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/patch/overview/0001-luci-mod-status-add-help-feedback-links-with-styled-button.patch | patch -p1
 popd
