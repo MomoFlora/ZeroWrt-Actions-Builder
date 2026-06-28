@@ -41,9 +41,9 @@ on:
         default: ''
         type: string
       lan_addr:
-        description: '📍 设置固件默认局域网（LAN）IP 地址'
-        required: true
-        default: '10.0.0.1'
+        description: '📍 设置固件默认局域网（LAN）IP 地址（可选，留空则为 10.0.0.1 ）'
+        required: false
+        default: ''
         type: string
       root_password:
         description: '🛡️ 设置后台（root）默认密码（可选，留空则无密码）'
