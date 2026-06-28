@@ -33,12 +33,12 @@ index a68e64b61e..76d5a18217 100644
 +			E('div', { class: 'help-btn-wrap' }, [
 +				E('a', {
 +					class: 'btn cbi-button help-btn',
-+					href: 'https://github.com/MomoFlora/immortalwrt-mt798x-actions',
++					href: 'https://github.com/MomoFlora/ZeroWrt-Actions-Builder',
 +					target: '_blank'
 +				}, [ _('项目地址') ]),
 +				E('a', {
 +					class: 'btn cbi-button help-btn',
-+					href: 'https://github.com/MomoFlora/immortalwrt-mt798x-actions/issues',
++					href: 'https://github.com/MomoFlora/ZeroWrt-Actions-Builder/issues',
 +					target: '_blank'
 +				}, [ _('功能反馈') ]),
 +				E('a', {
