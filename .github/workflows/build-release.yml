@@ -253,7 +253,7 @@ jobs:
 
       - name: Clone source code          
         run: |
-          git clone -q --single-branch --depth=1 --branch=${REPO_BRANCH} ${REPO_URL} uboot
+          git clone -q --single-branch --depth=1 --branch=${BL_BRANCH} ${BL_URL} uboot
 
       - name: Compile the Uboot
         id: compile
