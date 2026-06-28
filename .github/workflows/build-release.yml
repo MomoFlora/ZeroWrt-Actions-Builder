@@ -68,6 +68,10 @@ jobs:
       CONFIG_FILE: configs/${{ github.event.inputs.device }}.config
       PREPARE_BASE_SH: scripts/00-prepare_base.sh
       PREPARE_PACKAGE_SH: scripts/01-prepare_package.sh
+      WIFI_SSID: ${{ github.event.inputs.wifi_ssid }}
+      WIFI_PASSWORD: ${{ github.event.inputs.wifi_password }}
+      LAN_ADDR: ${{ github.event.inputs.lan_addr }}
+      ROOT_PASSWORD: ${{ github.event.inputs.root_password }}
       CACHE_TOOLCHAIN: true
       TZ: Etc/UTC
       
