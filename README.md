@@ -35,26 +35,26 @@
 | 品牌 / 运营商 (Brand) | 设备型号 (Device Model) | 配置文件标识 (Profile ID) |
 | :--- | :--- | :--- |
 | **GL.iNet** | GL-MT3000 (BeryX) | `glinet_gl-mt3000` |
-| | GL-MT6000 (Flint 2) | `glinet_gl-mt6000` |
+| **GL.iNet** | GL-MT6000 (Flint 2) | `glinet_gl-mt6000` |
 | **锐捷 (Ruijie)** | 星耀 EW-6000GX Pro | `ruijie_ew-6000gx-pro` |
-| | RG-X60 New | `ruijie_rg-x60-new` |
-| | RG-X60 Pro | `ruijie_rg-x60-pro` |
+| **锐捷 (Ruijie)** | RG-X60 New | `ruijie_rg-x60-new` |
+| **锐捷 (Ruijie)** | RG-X60 Pro | `ruijie_rg-x60-pro` |
 | **超级网关** | SuperGateway S20L | `supergateway_s20l` |
-| | SuperGateway S20M | `supergateway_s20m` |
-| | SuperGateway S20P | `supergateway_s20p` |
+| **超级网关** | SuperGateway S20M | `supergateway_s20m` |
+| **超级网关** | SuperGateway S20P | `supergateway_s20p` |
 | **Cudy** | TR3000 v1 | `cudy_tr3000-v1` |
-| | TR3000 v1 (256MB) | `cudy_tr3000-v1-256mb` |
+| **Cudy** | TR3000 v1 (256MB) | `cudy_tr3000-v1-256mb` |
 | **中国移动 (CMCC)** | A10 | `cmcc_a10` |
-| | A10 (256M) | `cmcc_a10-256m` |
+| **中国移动 (CMCC)** | A10 (256M) | `cmcc_a10-256m` |
 | **京东云 (JDCloud)** | 无线宝 RE-CP-03 | `jdcloud_re-cp-03` |
 | **360** | T7 | `qihoo_360t7` |
 | **磊科 (Netcore)** | N60 Pro | `netcore_n60-pro` |
 | **诺基亚 (Nokia)** | EA0326GMP | `nokia_ea0326gmp` |
 | **飞利浦 (Philips)** | HY3000 | `philips_hy3000` |
 | **其他适配** | 亚洲商旅 ASR3000 | `abt_asr3000` |
-| | Cetron CT3003 | `cetron_ct3003` |
-| | SL 3000 (eMMC) | `sl_3000-emmc` |
-| | SN R1 | `sn_r1` |
+| **Cetron** | Cetron CT3003 | `cetron_ct3003` |
+| **司络** | SL 3000 (eMMC) | `sl_3000-emmc` |
+| **全球牛**| SN R1 | `sn_r1` |
 
 ---
 
