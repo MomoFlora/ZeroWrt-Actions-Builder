@@ -50,8 +50,9 @@ sed -i 's/time.cloudflare.com/time1.cloud.tencent.com/g' package/base-files/file
 sed -i 's/pool.ntp.org/time2.cloud.tencent.com/g' package/base-files/files/bin/config_generate
 
 # 根文件系统文件
-mkdir -p files/etc files/root
+mkdir -p files/etc/uci-defaults files/root
 curl -so files/etc/banner https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/files/etc/banner
+curl -so files/etc/uci-defaults/99-custom.sh https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/files/etc/uci-defaults/99-custom.sh
 curl -so files/root/.zshrc https://raw.githubusercontent.com/MomoFlora/ZeroWrt-Actions-Builder/refs/heads/master/files/root/.zshrc
 pushd files/root
 git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh ./.oh-my-zsh
