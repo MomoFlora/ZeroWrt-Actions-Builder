@@ -19,6 +19,7 @@ on:
           - 'glinet_gl-mt6000'
           - 'jdcloud_re-cp-03'
           - 'netcore_n60-pro'
+          - 'netcore_n60-pro-512rom'
           - 'nokia_ea0326gmp'
           - 'philips_hy3000'
           - 'qihoo_360t7'
